@@ -13,6 +13,8 @@
 		8411E5D424F6913500D0F193 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8411E5D224F6913500D0F193 /* Main.storyboard */; };
 		8411E5D624F6913700D0F193 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8411E5D524F6913700D0F193 /* Assets.xcassets */; };
 		8411E5D924F6913700D0F193 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8411E5D724F6913700D0F193 /* LaunchScreen.storyboard */; };
+		8411E5E124F6F89200D0F193 /* TranslationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8411E5E024F6F89200D0F193 /* TranslationModel.swift */; };
+		8411E5E324F71BC300D0F193 /* TranslationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8411E5E224F71BC300D0F193 /* TranslationRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		8411E5D524F6913700D0F193 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8411E5D824F6913700D0F193 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8411E5DA24F6913700D0F193 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8411E5E024F6F89200D0F193 /* TranslationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationModel.swift; sourceTree = "<group>"; };
+		8411E5E224F71BC300D0F193 /* TranslationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				8411E5CC24F6913500D0F193 /* AppDelegate.swift */,
 				8411E5CE24F6913500D0F193 /* SceneDelegate.swift */,
 				8411E5D024F6913500D0F193 /* ViewController.swift */,
+				8411E5E024F6F89200D0F193 /* TranslationModel.swift */,
+				8411E5E224F71BC300D0F193 /* TranslationRequest.swift */,
 				8411E5D224F6913500D0F193 /* Main.storyboard */,
 				8411E5D524F6913700D0F193 /* Assets.xcassets */,
 				8411E5D724F6913700D0F193 /* LaunchScreen.storyboard */,
@@ -141,6 +147,8 @@
 				8411E5D124F6913500D0F193 /* ViewController.swift in Sources */,
 				8411E5CD24F6913500D0F193 /* AppDelegate.swift in Sources */,
 				8411E5CF24F6913500D0F193 /* SceneDelegate.swift in Sources */,
+				8411E5E324F71BC300D0F193 /* TranslationRequest.swift in Sources */,
+				8411E5E124F6F89200D0F193 /* TranslationModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
