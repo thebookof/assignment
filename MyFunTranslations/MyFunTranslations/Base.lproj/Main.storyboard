@@ -61,6 +61,7 @@
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0tl-EV-5dl">
                                             <rect key="frame" x="0.0" y="0.0" width="330" height="105"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" red="0.20724818547810614" green="0.80629889265129528" blue="0.36390271299684684" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="330" height="105"/>
                                     </collectionViewCell>
@@ -81,9 +82,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jbe-fo-2N9">
-                                <rect key="frame" x="20" y="94" width="335" height="102"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <rect key="frame" x="20" y="102" width="335" height="94"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -113,7 +113,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jY1-X7-CW3" secondAttribute="trailing" constant="20" id="dpL-cD-jg2"/>
                             <constraint firstItem="a9F-J3-GMA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dtz-KX-p6y"/>
                             <constraint firstItem="jY1-X7-CW3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="g8y-bI-cim"/>
-                            <constraint firstItem="jbe-fo-2N9" firstAttribute="top" secondItem="VMG-Ax-owa" secondAttribute="bottom" id="glg-RB-din"/>
+                            <constraint firstItem="jbe-fo-2N9" firstAttribute="top" secondItem="VMG-Ax-owa" secondAttribute="bottom" constant="8" id="glg-RB-din"/>
                             <constraint firstItem="cwv-vs-ghQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="264" id="gqP-Wg-9BL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BcA-cz-woq" secondAttribute="bottom" constant="60" id="mfB-sA-JY9"/>
                             <constraint firstItem="cwv-vs-ghQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="sEP-lP-GzE"/>
@@ -125,6 +125,7 @@
                     </view>
                     <connections>
                         <outlet property="picker" destination="0qB-uN-8dv" id="xUf-4O-kb6"/>
+                        <outlet property="textView" destination="jbe-fo-2N9" id="FHy-ja-Nb6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

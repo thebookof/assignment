@@ -11,8 +11,8 @@ import Foundation
 struct TranslationRequest {
     let resourceURL:URL
     
-    init(translationType:String) {
-        let requestString = "https://api.funtranslation.com/translate/\(translationType).json"
+    init(translationType:String,translationText:String) {
+        let requestString = "https://api.funtranslation.com/translate/\(translationType).json?text=\(translationText)"
         guard let resourceURL = URL(string: requestString) else {fatalError()}
         
         self.resourceURL = resourceURL
