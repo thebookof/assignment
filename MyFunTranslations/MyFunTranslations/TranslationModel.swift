@@ -16,3 +16,4 @@ enum TranslationError:Error {
     case noDataAvailable
     case cannotProcessData
 }
+
