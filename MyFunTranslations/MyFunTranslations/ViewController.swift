@@ -10,22 +10,33 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
     
-    @IBOutlet weak var picker:UIPickerView!
-    @IBOutlet weak var textView:UITextView!
+    @IBOutlet weak var picker: UIPickerView!
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var tableView: UITableView!
     
     var translationType = "morse"
-    var translatedText = ""
+    var translatedText = String() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
 
     
     let pickerData = ["English to Morse", "Morse to English", "US to UK", "UK to US", "English to Shakespeare"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        self.textView.delegate = self
+        
         self.picker.delegate = self
         self.picker.dataSource = self
         
-        self.textView.delegate = self
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        
     }
     
     //Picker Methods
@@ -46,7 +57,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         case 0:
             translationType = "morse"
         case 1:
-            translationType = "morse"
+            translationType = "morse2english"
         case 2:
             translationType = "us2uk"
         case 3:
@@ -67,19 +78,34 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     //Button Methods
     @IBAction func translateTapped(_ sender: UITextView){
         guard let textToTranslated = textView.text else {return}
+        
         let translationRequest = TranslationRequest(translationType: translationType, translationText: textToTranslated)
         
-        translationRequest.getTranslation {[weak self] result in
+        translationRequest.getTranslation() {[weak self] result in
             switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let text):
-                print(text)
-                self?.translatedText = text
+                case .failure(let error):
+                    print(error)
+                case .success(let text):
+                    print(text)
+                    self?.translatedText = text
             }
         }
     }
     
-
 }
 
+extension ViewController: UITableViewDelegate {}
+
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+        cell.textLabel?.text = translatedText
+        
+        return cell
+    }    
+
+}
