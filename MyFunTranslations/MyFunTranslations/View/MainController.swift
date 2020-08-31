@@ -12,30 +12,19 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var tableView: UITableView!
     
     var translationType = "morse"
-    var translatedText = String() {
-        didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
-
+    
     
     let pickerData = ["English to Morse", "Morse to English", "US to UK", "UK to US", "English to Shakespeare"]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.textView.delegate = self
         
         self.picker.delegate = self
         self.picker.dataSource = self
-        
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
         
     }
     
@@ -77,35 +66,19 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     //Button Methods
     @IBAction func translateTapped(_ sender: UITextView){
-        guard let textToTranslated = textView.text else {return}
-        
-        let translationRequest = TranslationRequest(translationType: translationType, translationText: textToTranslated)
-        
-        translationRequest.getTranslation() {[weak self] result in
-            switch result {
-                case .failure(let error):
-                    print(error)
-                case .success(let text):
-                    print(text)
-                    self?.translatedText = text
-            }
+        guard let textToTranslate = textView.text else {
+            //Alert user to enter text before return
+            return
         }
-    }
-    
-}
-
-extension ViewController: UITableViewDelegate {}
-
-extension ViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-        cell.textLabel?.text = translatedText
         
-        return cell
-    }    
-
+        let requestString = "https://api.funtranslations.com/translate/\(translationType).json?text=\(textToTranslate)"
+        
+        let responseController = self.storyboard?.instantiateViewController(withIdentifier: "ResponseController") as! ResponseContoller
+        responseController.requestString = requestString
+        
+        self.navigationController?.pushViewController(responseController, animated: true)
+        
+    }
+    
 }
+
