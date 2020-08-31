@@ -9,14 +9,6 @@
 import Foundation
 
 class TranslationRequest {
-    //let url: URL
-    
-    /*  init(translationType: String, translationText: String) {
-     let requestString = "https://api.funtranslations.com/translate/\(translationType).json?text=\(translationText)"
-     guard let requestURL = URL(string: requestString) else {fatalError()}
-     
-     //self.url = requestURL
-     }*/
     
     var contentData: ContentData!
     
@@ -33,7 +25,6 @@ class TranslationRequest {
                         if jsonData["translated"] != nil {
                             //Do something with the jSON data
                             self.contentData = try JSONDecoder().decode(ContentData.self, from: data)
-                            //let translatedData = contentData.translated
                             DispatchQueue.main.async {
                                 completion(true, nil)
                             }
@@ -47,8 +38,7 @@ class TranslationRequest {
             }
             dataTask.resume()
         } else {
-            print("Something went wrong constructiing the URL")
-            return
+            print("Something went wrong constructing the URL")
         }        
     }
 }

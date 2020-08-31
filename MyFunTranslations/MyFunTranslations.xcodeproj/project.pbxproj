@@ -62,9 +62,9 @@
 		8411E5CB24F6913500D0F193 /* MyFunTranslations */ = {
 			isa = PBXGroup;
 			children = (
-				847D516D24FC794600FF65F9 /* View */,
-				847D516C24FC792500FF65F9 /* ViewModel */,
-				847D516B24FC791700FF65F9 /* Model */,
+				847D516D24FC794600FF65F9 /* ViewControllers */,
+				847D516C24FC792500FF65F9 /* ViewModels */,
+				847D516B24FC791700FF65F9 /* DataModels */,
 				8411E5CC24F6913500D0F193 /* AppDelegate.swift */,
 				8411E5CE24F6913500D0F193 /* SceneDelegate.swift */,
 				8411E5D224F6913500D0F193 /* Main.storyboard */,
@@ -75,29 +75,29 @@
 			path = MyFunTranslations;
 			sourceTree = "<group>";
 		};
-		847D516B24FC791700FF65F9 /* Model */ = {
+		847D516B24FC791700FF65F9 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
 				8411E5E024F6F89200D0F193 /* TranslationModel.swift */,
 			);
-			path = Model;
+			path = DataModels;
 			sourceTree = "<group>";
 		};
-		847D516C24FC792500FF65F9 /* ViewModel */ = {
+		847D516C24FC792500FF65F9 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				8411E5E224F71BC300D0F193 /* TranslationRequest.swift */,
 			);
-			path = ViewModel;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		847D516D24FC794600FF65F9 /* View */ = {
+		847D516D24FC794600FF65F9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				8411E5D024F6913500D0F193 /* MainController.swift */,
 				848C24D724FC3F1700DB368F /* ResponseController.swift */,
 			);
-			path = View;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

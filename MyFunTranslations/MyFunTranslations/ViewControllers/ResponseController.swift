@@ -39,10 +39,10 @@ class ResponseContoller: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         cell.backgroundColor = .green
-        cell.textLabel?.text = "Some translated text"
-        //translationRequest.contentData.translated
+        //Possible unwrapping of nil optional - find out how to handle
+        cell.textLabel?.text = translationRequest.contentData.translated
         
         return cell
     }

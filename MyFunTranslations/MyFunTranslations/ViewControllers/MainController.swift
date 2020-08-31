@@ -14,8 +14,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var textView: UITextView!
     
     var translationType = "morse"
-    
-    
+        
     let pickerData = ["English to Morse", "Morse to English", "US to UK", "UK to US", "English to Shakespeare"]
     
     override func viewDidLoad() {
