@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="X89-Dk-Pju">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="X89-Dk-Pju">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -10,7 +10,7 @@
         <!--My Fun Translations!-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyFunTranslations" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="MyFunTranslations" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,7 +34,7 @@
                                 <rect key="frame" x="133.5" y="565" width="108" height="42"/>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="108" id="mvg-Rg-e9O"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="108" id="mvg-Rg-e9O"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Translate">
@@ -75,7 +75,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Fun Translations!" id="5Pn-Mp-9Gk">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="pmf-sK-WJJ">
+                        <barButtonItem key="backBarButtonItem" id="pmf-sK-WJJ">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
@@ -88,10 +88,10 @@
             </objects>
             <point key="canvasLocation" x="1069.5999999999999" y="138.0809595202399"/>
         </scene>
-        <!--Response Contoller-->
+        <!--Response View Contoller-->
         <scene sceneID="J3p-Ud-hym">
             <objects>
-                <viewController storyboardIdentifier="ResponseController" id="AcX-rk-Zk3" customClass="ResponseContoller" customModule="MyFunTranslations" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResponseViewController" id="AcX-rk-Zk3" customClass="ResponseViewContoller" customModule="MyFunTranslations" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nGg-SL-GNT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -100,7 +100,7 @@
                                 <rect key="frame" x="20" y="270" width="335" height="127"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="z5p-m1-8K8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="z5p-m1-8K8">
                                         <rect key="frame" x="0.0" y="28" width="335" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z5p-m1-8K8" id="3PG-Od-4sO">
@@ -117,12 +117,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Wb6-GW-amR">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="eQc-QY-OA0" firstAttribute="top" secondItem="69X-pF-XjB" secondAttribute="bottom" constant="1" id="5dE-Yi-i55"/>
                             <constraint firstItem="eQc-QY-OA0" firstAttribute="leading" secondItem="3wk-Aa-mwH" secondAttribute="leading" constant="20" id="6Be-JS-fh8"/>
                             <constraint firstItem="3wk-Aa-mwH" firstAttribute="bottom" secondItem="eQc-QY-OA0" secondAttribute="bottom" constant="270" id="9gw-Q3-27M"/>
+                            <constraint firstItem="Wb6-GW-amR" firstAttribute="centerY" secondItem="nGg-SL-GNT" secondAttribute="centerY" id="ALI-vF-idy"/>
+                            <constraint firstItem="Wb6-GW-amR" firstAttribute="centerX" secondItem="nGg-SL-GNT" secondAttribute="centerX" id="JKD-Bo-r51"/>
                             <constraint firstItem="69X-pF-XjB" firstAttribute="leading" secondItem="3wk-Aa-mwH" secondAttribute="leading" constant="20" id="XlJ-iy-vN9"/>
                             <constraint firstItem="eQc-QY-OA0" firstAttribute="centerY" secondItem="nGg-SL-GNT" secondAttribute="centerY" id="g6Z-JN-RbH"/>
                             <constraint firstItem="eQc-QY-OA0" firstAttribute="centerX" secondItem="nGg-SL-GNT" secondAttribute="centerX" id="gZC-Wg-Qoa"/>
@@ -132,6 +138,7 @@
                         <viewLayoutGuide key="safeArea" id="3wk-Aa-mwH"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="Wb6-GW-amR" id="BvP-0O-mAi"/>
                         <outlet property="tableView" destination="eQc-QY-OA0" id="V4y-UK-bNT"/>
                     </connections>
                 </viewController>

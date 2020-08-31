@@ -9,6 +9,10 @@
 import Foundation
 
 struct ContentData: Decodable {
+    var contents: TranslatedData
+}
+
+struct TranslatedData: Decodable {
     var translated: String
 }
 
