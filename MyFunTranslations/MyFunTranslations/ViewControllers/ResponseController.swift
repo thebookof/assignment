@@ -21,13 +21,9 @@ class ResponseContoller: UIViewController, UITableViewDelegate, UITableViewDataS
         
         self.navigationItem.title = "My Fun Translations!"
       
-        translationRequest.getTranslation(requestString: requestString!) {[weak self] result, error in
+        translationRequest.getTranslation(requestString: requestString!) {[weak self] result, _ in
            if result {
                self?.tableView.reloadData()
-           } else {
-               let alert = UIAlertController( title: "Error", message: error, preferredStyle: .alert)
-               alert.addAction(UIAlertAction(title:"OK", style:.default, handler: nil))
-               self?.present(alert, animated: true, completion: nil)
            }
         }
         tableView.delegate = self
@@ -41,8 +37,15 @@ class ResponseContoller: UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         cell.backgroundColor = .green
-        //Possible unwrapping of nil optional - find out how to handle
-        cell.textLabel?.text = translationRequest.contentData.translated
+
+        if let translatedData = translationRequest.contentData?.translated {
+            cell.textLabel?.text = translatedData
+        } else {
+            // Hanlde error situation
+            let alert = UIAlertController( title: "Error", message: "Unable to get translation", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title:"OK", style:.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
         
         return cell
     }

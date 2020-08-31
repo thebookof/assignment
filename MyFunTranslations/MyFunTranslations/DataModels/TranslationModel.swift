@@ -12,8 +12,3 @@ struct ContentData: Decodable {
     var translated: String
 }
 
-enum TranslationError: Error {
-    case noDataAvailable
-    case cannotProcessData
-}
-

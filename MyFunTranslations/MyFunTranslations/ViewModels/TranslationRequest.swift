@@ -10,7 +10,7 @@ import Foundation
 
 class TranslationRequest {
     
-    var contentData: ContentData!
+    var contentData: ContentData?
     
     func getTranslation(requestString: String, completion: @escaping(Bool, String?) -> Void) {
         if let url = URL(string: requestString) {
