@@ -13,8 +13,9 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var textView: UITextView!
     
+    let translationPickerDataModel = TranslationPickerDataModel()
+    
     var translationType = "us2uk"
-    let pickerData = ["US to UK", "UK to US", "English to Morse", "English to Old English", "English to Shakespeare"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,13 +28,14 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
+
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
+        return self.translationPickerDataModel.translationPickerData.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
+        return self.translationPickerDataModel.translationPickerData[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -64,6 +66,12 @@ enum SelectedTranslationType: Int {
     case morse
     case oldenglish
     case shakespeare
+    case piglatin
+    case dothraki
+    case yoda
+    case sith
+    case vulcan
+    case klingon
     
     var name: String {
         get {return String(describing: self)}

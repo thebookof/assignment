@@ -16,6 +16,7 @@
 		8411E5E124F6F89200D0F193 /* TranslationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8411E5E024F6F89200D0F193 /* TranslationModel.swift */; };
 		8411E5E324F71BC300D0F193 /* TranslationRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8411E5E224F71BC300D0F193 /* TranslationRequestViewModel.swift */; };
 		848C24D824FC3F1700DB368F /* ResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C24D724FC3F1700DB368F /* ResponseViewController.swift */; };
+		84CF04BC24FE6B3200BB560B /* TranslationTypeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF04BB24FE6B3200BB560B /* TranslationTypeDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		8411E5E024F6F89200D0F193 /* TranslationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationModel.swift; sourceTree = "<group>"; };
 		8411E5E224F71BC300D0F193 /* TranslationRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationRequestViewModel.swift; sourceTree = "<group>"; };
 		848C24D724FC3F1700DB368F /* ResponseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseViewController.swift; sourceTree = "<group>"; };
+		84CF04BB24FE6B3200BB560B /* TranslationTypeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationTypeDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				8411E5E024F6F89200D0F193 /* TranslationModel.swift */,
+				84CF04BB24FE6B3200BB560B /* TranslationTypeDataModel.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84CF04BC24FE6B3200BB560B /* TranslationTypeDataModel.swift in Sources */,
 				8411E5D124F6913500D0F193 /* MainViewController.swift in Sources */,
 				8411E5CD24F6913500D0F193 /* AppDelegate.swift in Sources */,
 				848C24D824FC3F1700DB368F /* ResponseViewController.swift in Sources */,
