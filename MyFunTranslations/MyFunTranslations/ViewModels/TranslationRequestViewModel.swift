@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TranslationRequest {
+struct TranslationRequestViewModel {
     
     func getTranslation(requestString: String, completion: @escaping(Bool, String?) -> Void) {
         if let url = URL(string: requestString) {
@@ -17,7 +17,6 @@ class TranslationRequest {
                     guard let data = data else { return }
                     
                     do {
-                        //let jsonData = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                         let contentData = try JSONDecoder().decode(ContentData.self, from: data)
                         let translatedText = contentData.contents.translated
                         DispatchQueue.main.async {
