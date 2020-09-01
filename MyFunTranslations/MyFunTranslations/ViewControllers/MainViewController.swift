@@ -10,19 +10,19 @@ import UIKit
 
 class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
     
-    @IBOutlet weak var picker: UIPickerView!
+    @IBOutlet weak var translationPicker: UIPickerView!
     @IBOutlet weak var textView: UITextView!
     
     let translationPickerDataModel = TranslationPickerDataModel()
     
-    var translationType = "us2uk"
+    var translationType: String? = SelectedTranslationType(rawValue: 0)?.translateCaseString
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.textView.delegate = self
-        self.picker.delegate = self
-        self.picker.dataSource = self
+        self.translationPicker.delegate = self
+        self.translationPicker.dataSource = self
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -40,7 +40,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if let selectedTranslationType = SelectedTranslationType(rawValue: row) {
-            translationType = selectedTranslationType.name
+            translationType = selectedTranslationType.translateCaseString
         }
     }
     
@@ -52,7 +52,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBAction func translateTapped(_ sender: UITextView){
         guard let textToTranslate = textView.text else { return }
         let translatedText = textToTranslate.replacingOccurrences(of: " ", with: "%20")
-        let requestString = "https://api.funtranslations.com/translate/\(translationType).json?text=\(translatedText)"
+        let requestString = "https://api.funtranslations.com/translate/\(translationType!).json?text=\(translatedText)"
         let responseController = self.storyboard?.instantiateViewController(withIdentifier: "ResponseViewController") as! ResponseViewContoller
         responseController.requestString = requestString
         
@@ -73,7 +73,7 @@ enum SelectedTranslationType: Int {
     case vulcan
     case klingon
     
-    var name: String {
+    var translateCaseString: String {
         get {return String(describing: self)}
     }
 }

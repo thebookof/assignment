@@ -24,14 +24,16 @@ struct TranslationRequestViewModel {
                         }
                     } catch{
                         DispatchQueue.main.async {
-                            completion(false, "Error fetching data")
+                            completion(false, nil)
                         }
                     }
                 }
             }
             dataTask.resume()
         } else {
-            print("Something went wrong constructing the URL")
+            DispatchQueue.main.async {
+                completion(false, nil)
+            }
         }        
     }
 }

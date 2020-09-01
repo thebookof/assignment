@@ -80,8 +80,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="picker" destination="0qB-uN-8dv" id="xUf-4O-kb6"/>
                         <outlet property="textView" destination="jbe-fo-2N9" id="FHy-ja-Nb6"/>
+                        <outlet property="translationPicker" destination="0qB-uN-8dv" id="xUf-4O-kb6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

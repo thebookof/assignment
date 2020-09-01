@@ -27,6 +27,12 @@ class ResponseViewContoller: UIViewController {
                 self?.activityIndicator.hidesWhenStopped = true
                 self?.textView.backgroundColor = .systemGreen
                 self?.textView.text = translatedText!                
+            } else {
+                self?.activityIndicator.stopAnimating()
+                self?.activityIndicator.hidesWhenStopped = true
+                let errorAlert = UIAlertController(title: "Error", message: "Exceeded maximum of 5 requests per hour. Please try again later.", preferredStyle: .alert)
+                errorAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self?.present(errorAlert, animated: true, completion: nil)
             }
         }
     }
