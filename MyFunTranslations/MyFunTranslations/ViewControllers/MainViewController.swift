@@ -13,8 +13,8 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var textView: UITextView!
     
-    var translationType = "morse"
-    let pickerData = ["English to Morse", "Morse to English", "US to UK", "UK to US", "English to Shakespeare"]
+    var translationType = "us2uk"
+    let pickerData = ["US to UK", "UK to US", "English to Morse", "English to Old English", "English to Shakespeare"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,10 +59,10 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
 }
 
 enum SelectedTranslationType: Int {
-    case morse = 0
-    case morse2english
-    case us2uk
+    case us2uk = 0
     case uk2us
+    case morse
+    case oldenglish
     case shakespeare
     
     var name: String {
